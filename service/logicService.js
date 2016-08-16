@@ -5,6 +5,7 @@ angular.
     this.fire = function (guess) {
         for (var i = 0; i < dataService.numShips; i++) {
             var ship = dataService.ships[i];
+
             var index = ship.locations.indexOf(guess);
             console.log(index);
             console.log(guess);
@@ -43,6 +44,7 @@ angular.
         for (var i = 0; i < dataService.numShips; i++) {
             do {
                 locations = this.generateShip();
+
             } while (this.collision(locations));
             dataService.ships[i].locations = locations;
         }
@@ -81,7 +83,14 @@ angular.
             }
         }
         return false;
-    }
+    };
+
+
+
+
+
+
+
 
     this.A = dataService.ships;
 
