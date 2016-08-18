@@ -1,13 +1,13 @@
-/*body {*/
-    /*background-color: black;*/
-/*}*/
-/*div#board {*/
-    /*position: relative;*/
-    /*width: 1024px;*/
-    /*height: 863px;*/
-    /*margin: auto;*/
-    /*background: url("board%20(1).jpg") no-repeat;*/
-/*}*/
+body {
+    background-color: black;
+}
+div#board {
+    position: relative;
+    width: 1024px;
+    height: 863px;
+    margin: auto;
+    background: url("board%20(1).jpg") no-repeat;
+}
 div#messageArea {
     position: absolute;
     top: 0px;
@@ -25,6 +25,7 @@ table {
 td {
     width: 94px;
     height: 94px;
+    cursor: pointer;
 }
 form {
     position: absolute;
@@ -44,10 +45,4 @@ form input {
 }
 .miss {
     background: url("miss%20(1).png") no-repeat center center;
-}
-table {
-    border: solid 2px;
-}
-td {
-    border: solid 3px
 }

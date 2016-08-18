@@ -77,13 +77,6 @@ angular.
         return false;
     };
 
-
-
-
-
-
-
-
-    this.shipsCoordinates = dataService.ships;
+    //this.shipsCoordinates = dataService.ships;
 
 });
