@@ -1,34 +1,26 @@
 angular.
     module('battleApp').
         service('logicService',function(dataService) {
-
     this.fire = function (guess) {
         for (var i = 0; i < dataService.numShips; i++) {
             var ship = dataService.ships[i];
-
             var index = ship.locations.indexOf(guess);
             console.log(index);
             console.log(guess);
             console.log(ship);
             if (index >= 0) {
                 ship.hits[index] = "hit";
-                //view.displayHit(guess);           SET CLASS
-                var msg = 'HIT!!!';
+                this.msg = 'HIT!!!';
                 if (this.isSunk(ship)) {
-                        msg = "You sank my battleship!";
+                        this.msg = "You sank my battleship!";
                         dataService.shipsSunk++;
                     }
-
-                    return msg;
+                    return true;
                 }
-
             }
-            //view.displayMiss(guess);   SET CLASS
-            msg = ("You missed.");
-            return msg;
+            this.msg = ("You missed.");
+            return false;
         };
-
-
 
     this.isSunk = function(ship) {
         for (var i = 0; i < dataService.shipLength; i++) {
@@ -92,6 +84,6 @@ angular.
 
 
 
-    this.A = dataService.ships;
+    this.shipsCoordinates = dataService.ships;
 
 });
