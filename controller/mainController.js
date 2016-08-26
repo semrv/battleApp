@@ -8,23 +8,25 @@ angular.
             //var location = $scope.parseGuess(guess)       IF WE HAVE INPUT
             var location = event.target.id;
             if(location) {
-                $scope.guesses++;
+                $scope.guesses = logicService.guesses;
                 $scope.hit = logicService.fire(location);
 
-                if($scope.hit === true  ){
+                if($scope.hit === true){
                     $scope.hitSquare[location] = true;
                     $scope.msg = logicService.msg
                 } else  {
                     $scope.missSquare[location] = true;
                     $scope.msg = logicService.msg
                 }
-                if ($scope.hit && dataService.shipsSunk === dataService.numShips) {
+                if (dataService.shipsSunk === dataService.numShips) {
                     alert('YOU SANK ALL MY BATTLESHIPS, IN ' + $scope.guesses + ' guesses')
                 }
             }
-          //$scope.guess = '';        IF WE HAVE INPUT
+            // IF WE HAVE INPUT
+          //$scope.guess = '';
         };
-    $scope.guesses = 0;
+
+
     // IF WE HAVE INPUT, THIS FUNCTION NEEDS TO PARSE PEOPLE GUESS
     //$scope.parseGuess = function (guess) {
     //        var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
@@ -60,7 +62,7 @@ angular.
         [0,1,2,3,4,5,6]
     ];
 
-    //$scope.shipsCoordinates = logicService.shipsCoordinates;
+    $scope.shipsCoordinates = dataService.ships;
 
 
 

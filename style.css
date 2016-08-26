@@ -27,12 +27,22 @@ td {
     height: 94px;
     cursor: pointer;
 }
+td:hover {
+    background-color: #8BC34A;
+}
+.miss:hover {
+    background-color: transparent;
+}
+.hit:hover {
+    background-color: transparent;
+}
+
 form {
     position: absolute;
     bottom: 0px;
     right: 0px;
     padding: 15px;
-    background-color: rgb(83, 175, 19)
+    background-color: rgb(83, 175, 19);
 
 }
 form input {
@@ -42,7 +52,18 @@ form input {
 }
 .hit {
     background: url("ship%20(1).png") no-repeat center center;
+    cursor: default;
+
 }
 .miss {
     background: url("miss%20(1).png") no-repeat center center;
+    cursor: default;
 }
+.info {
+    width: 350px;
+    color: white;
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+

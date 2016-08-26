@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="mainController">
+<div class="info">
+    <p style="text-align: center"> RULES OF A GAME </p>
+    <p>You have a game board, which size is 7x7 squares. You have 3 shiips,
+        they are located on the board, everyone consists of 3 squares.
+        You need click on "GENERATE SHIPS" button and the game will start.
+        Use left mouse button for FIRE!
+        Sink all ships as soon as possible!
+        LETS GO!</p>
+</div>
 <div id="board">
     <div id="messageArea">{{msg}}</div>
 <table>
@@ -16,10 +25,10 @@
         </td>
     </tr>
 </table>
-<!--{{shipsCoordinates}}-->
 <form>
-<!--&lt;!&ndash;<input type="text" ng-model="guess">&ndash;&gt;   IF WE HAVE INPUT-->
-<!--&lt;!&ndash;<button ng-click="processGuess($guess)" >FIRE !!! </button>&ndash;&gt;  IF WE HAVE INPUT -->
+    <!--IF WE HAVE INPUT-->
+<!--<input type="text" ng-model="guess">   -->
+<!--<button ng-click="processGuess($guess)" >FIRE !!! </button>-->
     <button ng-click="generate()"> GENERATE SHIPS</button>
     </form>
 </div>

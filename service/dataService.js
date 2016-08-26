@@ -8,8 +8,8 @@ angular.
         this.numShips = 3;
         this.shipLength = 3;
         this.shipsSunk = 0;
-        this.ships = [{locations: [0, 0, 0], hits: ["", "", ""]},
-            {locations: [0, 0, 0], hits: ["", "", ""]},
-            {locations: [0, 0, 0], hits: ["", "", ""]}];
+        this.ships = [{locations: [0, 0, 0], hits: ["", "", ""], shipLive: true},
+            {locations: [0, 0, 0], hits: ["", "", ""], shipLive: true},
+            {locations: [0, 0, 0], hits: ["", "", ""], shipLive: true}];
 
 });
