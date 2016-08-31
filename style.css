@@ -1,12 +1,12 @@
-body {
-    background-color: black;
-}
+/*body {*/
+    /*background-color: black;*/
+/*}*/
 div#board {
     position: relative;
     width: 1024px;
     height: 863px;
     margin: auto;
-    background: url("board%20(1).jpg") no-repeat;
+    /*background: url("images/board.jpg") no-repeat;*/
 }
 div#messageArea {
     position: absolute;
@@ -26,6 +26,7 @@ td {
     width: 94px;
     height: 94px;
     cursor: pointer;
+    border: solid 2px;
 }
 td:hover {
     background-color: #8BC34A;
@@ -51,12 +52,12 @@ form input {
     font-size: 1em;
 }
 .hit {
-    background: url("ship%20(1).png") no-repeat center center;
+    background: url("images/ship.png") no-repeat center center;
     cursor: default;
 
 }
 .miss {
-    background: url("miss%20(1).png") no-repeat center center;
+    background: url("images/miss.png") no-repeat center center;
     cursor: default;
 }
 .info {

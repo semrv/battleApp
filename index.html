@@ -6,37 +6,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="mainController">
-<div class="info">
-    <p style="text-align: center"> RULES OF A GAME </p>
-    <p>You have a game board, which size is 7x7 squares. You have 3 shiips,
-        they are located on the board, everyone consists of 3 squares.
-        You need click on "GENERATE SHIPS" button and the game will start.
-        Use left mouse button for FIRE!
-        Sink all ships as soon as possible!
-        LETS GO!</p>
-</div>
-<div id="board">
-    <div id="messageArea">{{msg}}</div>
-<table>
-    <tr ng-repeat="row in squareData" ng-init="rowIndex = $index">
-        <td ng-class="{'miss': missSquare[rowIndex.toString() + col.toString()], 'hit': hitSquare[rowIndex.toString() + col.toString()]}"
-            id="{{ rowIndex }}{{ col }}"
-            ng-repeat="col in row"  ng-init="colIndex = $index" ng-click="processGuess($event)">
-        </td>
-    </tr>
-</table>
-<form>
-    <!--IF WE HAVE INPUT-->
-<!--<input type="text" ng-model="guess">   -->
-<!--<button ng-click="processGuess($guess)" >FIRE !!! </button>-->
-    <button ng-click="generate()"> GENERATE SHIPS</button>
-    </form>
-</div>
+<div ng-view></div>
 <script src="angular-1.5.8/angular.js"></script>
 <script src="angular-1.5.8/angular-route.js"></script>
 <script src="battleApp.module.js"></script>
 <script src="controller/mainController.js"></script>
 <script src="service/logicService.js"></script>
 <script src="service/dataService.js"></script>
+<script src="route/route.js"></script>
+<script src="controller/controllerTemplate-1.js"></script>
+<script src="controller/controllerTemplate-2.js"></script>
+<script src="controller/controllerTemplate-3.js"></script>
 </body>
 </html>

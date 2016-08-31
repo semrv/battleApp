@@ -6,27 +6,24 @@ angular.
         for (var i = 0; i < dataService.numShips; i++) {
             var ship = dataService.ships[i];
             var index = ship.locations.indexOf(guess);
-            //console.log(index);
-            //console.log(guess);
-            //console.log(ship);
             if (index >= 0) {
                 this.guesses++;
                 ship.hits[index] = "hit";
                 this.msg = 'HIT!!!';
-                if (this.isSunk(ship) && ship.shipLive ) {
-                        this.msg = "You sank my battleship!";
-                        ship.shipLive = false;
-                        dataService.shipsSunk++;
-                    }
-                    return true;
+                if (this.isSunk(ship) && ship.shipLive) {
+                    this.msg = "You sank my battleship!";
+                    ship.shipLive = false;
+                    dataService.shipsSunk++;
                 }
+                return true;
             }
-            this.msg = ("You missed.");
+        }
+        this.msg = ("You missed.");
         this.guesses++;
-            return false;
-        };
+        return false;
+    };
 
-    this.isSunk = function(ship) {
+    this.isSunk = function (ship) {
         for (var i = 0; i < dataService.shipLength; i++) {
             if (ship.hits[i] !== "hit") {
                 return false;
