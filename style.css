@@ -1,6 +1,7 @@
-/*body {*/
+body {
     /*background-color: black;*/
-/*}*/
+    background-color: #EEEEEE;
+}
 div#board {
     position: relative;
     width: 1024px;
@@ -12,7 +13,6 @@ div#messageArea {
     position: absolute;
     top: 0px;
     left: 0px;
-
     color: #D50000;
     font-size: 50px;
 }
@@ -20,13 +20,16 @@ table {
     position: absolute;
     left: 173px;
     top: 98px;
-    border-spacing: 0px;
+    /*border-spacing: 0px;*/
 }
 td {
     width: 94px;
     height: 94px;
     cursor: pointer;
     border: solid 2px;
+    border-color: #004D40;
+    margin: 10px;
+
 }
 td:hover {
     background-color: #8BC34A;
@@ -57,8 +60,18 @@ form input {
 
 }
 .miss {
-    background: url("images/miss.png") no-repeat center center;
+    /*background: url("images/miss.png") no-repeat center center;*/
     cursor: default;
+    position: relative;
+
+}
+.miss:before{
+    position: absolute;
+    font-size: 120px;
+    left: 33%;
+    bottom: 12%;
+    color: green;
+    content: ".";
 }
 .info {
     width: 350px;
@@ -67,4 +80,6 @@ form input {
     position: relative;
     z-index: 1;
 }
-
+.rules {
+    color: black;
+}

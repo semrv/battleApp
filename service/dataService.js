@@ -4,13 +4,9 @@
 angular.
     module('battleApp').
         service('dataService', function () {
-    this.boardSize = 8;
-    this.numShips = 3;
-    this.shipLength = 3;
+    this.boardSize = 0;
+    this.numShips = 0;
+    this.shipLength = 0;
     this.shipsSunk = 0;
-    this.ships = [
-        {locations: [0, 0, 0], hits: ["hit", "hit", "hit"], shipLive: true},
-        {locations: [0, 0, 0], hits: ["", "", ""], shipLive: true},
-        {locations: [0, 0, 0], hits: ["", "", ""], shipLive: true}];
-
+    this.ships = [];
 });

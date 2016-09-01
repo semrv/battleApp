@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<input type="text" placeholder="number of ships">
-<input type="text" placeholder="size of board">
-<a href="#/game"> START GAME </a>
+<input class='enter' type="text" placeholder="length of ships" ng-model="shipLength">
+<a href='' ng-click="length(shipLength)"> DLINA </a> <br>
+
+<input class='enter' type='text' placeholder="number of ships" ng-model="ammount">
+<a href='' ng-click="number(ammount)"> KOLVO SHIPS</a> <br>
+
+<input class='enter' type="text" placeholder="size of board" ng-model="value">
+<a href="#/game" ng-click="foo(value)"> SIZE </a> <br
+
 </body>
 </html>
