@@ -1,6 +1,6 @@
 angular.
     module('battleApp').
-        controller('mainController', function ($scope,shipsService,$location) {
+        controller('mainController', function ($scope,shipsService,$state) {
     $scope.missSquare = {};
     $scope.hitSquare = {};
     $scope.processGuess = function (rowIndex, col) {
@@ -21,7 +21,7 @@ angular.
             }
             if (shipsService.shipsSunk == shipsService.numShips) {
                 alert('CONGRATULATIONS. YOU WIN! ')
-                $location.path('/finish')
+                $state.go('finish')
             }
         }
     };

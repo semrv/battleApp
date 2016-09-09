@@ -1,23 +1,20 @@
-angular.
-    module('battleApp').
-        config(function($routeProvider) {
-            $routeProvider.
-                when('/',{
-                    templateUrl: 'templates/tmp1.html',
-                    controller: 'controllerTemplate-1'
+ angular.
+     module('battleApp').
+        config(function($stateProvider,$urlRouterProvider) {
+    $stateProvider
+        .state('start', {
+            url: '/',
+            templateUrl: 'templates/tmp1.html'
+        })
+        .state('game', {
+            url: '/',
+            templateUrl: 'templates/tmp2.html'
+        })
+        .state('finish', {
+            url: '/',
+            templateUrl: 'templates/tmp3.html'
+        });
 
-            }).
-                when('/game',{
-                    templateUrl: 'templates/tmp2.html',
-                    controller: 'controllerTemplate-2'
+     $urlRouterProvider.otherwise('/')
 
-            }).
-                when('/finish',{
-                    templateUrl: 'templates/tmp3.html',
-                    controller: 'controllerTemplate-3'
-
-            }).
-                otherwise({
-                redirectTo: '/'
-            });
-});
+ });

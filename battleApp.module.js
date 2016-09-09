@@ -1,6 +1,6 @@
 angular.module('battleApp',
     [
-        'ngRoute',
+        'ui.router',
         'ngMessages'
     ]
 );
