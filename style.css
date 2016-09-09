@@ -19,6 +19,7 @@ table {
     left: 173px;
     top: 98px;
     /*border-spacing: 0px;*/
+
 }
 td {
     width: 94px;
@@ -72,30 +73,23 @@ td:hover {
     font-size: 25px
 }
 .form {
+    margin-top: 150px;
     display: block;
     text-align: center;
-}
-form {
-    margin-top: 150px;
 }
 .wrapper {
     display: inline-block;
     margin-left: 50px;
 }
-
-
-
 .button {
     display: block;
     text-align: center;
     margin-top: 100px;
 }
-
 .button-start {
     border-radius: 10px;
     border: 2px solid #edebe9;
 }
-
 .button a {
     text-align: center;
     padding: 10px 20px 10px 20px;
@@ -107,19 +101,16 @@ form {
     color: #fff;
     font-size: 30px;
 }
-
 .button a:hover {
     background-color: #4bcaff;
     box-shadow: 0 4px 0 #277697;
     border: 2px solid #4bcafff;
 }
-
 .button a:active {
     box-shadow: inset 0 0 0 #277697;
     border: 2px solid #4bcafff;
     border: 2px solid #2791a8;
 }
-
 .wrapper  div{
     margin-bottom: 10px;
     color: #fff;

@@ -24,11 +24,10 @@ angular.
                 $location.path('/finish')
             }
         }
-
     };
 
     try {
-        $scope.foo = function (shipLength, ammount, value) {
+        $scope.start = function (shipLength, ammount, value) {
             if (!shipLength || !ammount || !value) {
                 throw new SyntaxError('Данные неверны');
             }
