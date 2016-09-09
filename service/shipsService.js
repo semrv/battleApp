@@ -1,10 +1,15 @@
 angular.
     module('battleApp').
-        service('logicService',function(dataService) {
+        service('shipsService',function() {
+    this.boardSize = 0;
+    this.numShips = 0;
+    this.shipLength = 0;
+    this.shipsSunk = 0;
+    this.ships = [];
     this.guesses = 0;
     this.fire = function (guess) {
-        for (var i = 0; i < dataService.numShips; i++) {
-            var ship = dataService.ships[i];
+        for (var i = 0; i < this.numShips; i++) {
+            var ship = this.ships[i];
             var index = ship.locations.indexOf(guess);
             if (index >= 0) {
                 this.guesses++;
@@ -13,7 +18,7 @@ angular.
                 if (this.isSunk(ship) && ship.shipLive) {
                     this.msg = "You sank my battleship!";
                     ship.shipLive = false;
-                    dataService.shipsSunk++;
+                    this.shipsSunk++;
                 }
                 return true;
             }
@@ -24,7 +29,7 @@ angular.
     };
 
     this.isSunk = function (ship) {
-        for (var i = 0; i < dataService.shipLength; i++) {
+        for (var i = 0; i < this.shipLength; i++) {
             if (ship.hits[i] !== "hit") {
                 return false;
             }
@@ -34,12 +39,12 @@ angular.
 
     this.generateShipLocations =  function() {
         var locations;
-        for (var i = 0; i < dataService.numShips; i++) {
+        for (var i = 0; i < this.numShips; i++) {
             do {
                 locations = this.generateShip();
 
             } while (this.collision(locations));
-            dataService.ships[i].locations = locations;
+            this.ships[i].locations = locations;
         }
     };
 
@@ -48,15 +53,15 @@ angular.
         var row, col;
 
         if (direction === 1) {
-            row = Math.floor(Math.random() * dataService.boardSize);
-            col = Math.floor(Math.random() * (dataService.boardSize - dataService.shipLength));
+            row = Math.floor(Math.random() * this.boardSize);
+            col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
         } else {
-            row = Math.floor(Math.random() * (dataService.boardSize - dataService.shipLength));
-            col = Math.floor(Math.random() * dataService.boardSize)
+            row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+            col = Math.floor(Math.random() * this.boardSize)
         }
 
         var newShipLocations = [];
-        for (var i = 0; i < dataService.shipLength; i++) {
+        for (var i = 0; i < this.shipLength; i++) {
             if (direction === 1) {
                 newShipLocations.push(row + "" + (col + i));
             } else {
@@ -67,8 +72,8 @@ angular.
     };
 
     this.collision = function(locations) {
-        for (var i = 0; i < dataService.numShips; i++) {
-            var ship = dataService.ships[i];
+        for (var i = 0; i < this.numShips; i++) {
+            var ship = this.ships[i];
             for (var j = 0; j < locations.length; j++) {
                 if (ship.locations.indexOf(locations[j]) >= 0) {
                     return true;

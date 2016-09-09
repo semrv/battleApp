@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
-<div class="info">
-    <p class="rules">{{shipsCoordinates}} </p>
-    <a href="#/finish"> TEMPLATE 3</a>
-    <a href="#/"> TEMPLATE 1</a>
-    <p style="text-align: center" class="rules"> RULES OF A GAME </p>
-</div>
-<div id="board">
-    <div id="messageArea">{{msg}}</div>
-    <table>
-        <tr ng-repeat="row in squareData" ng-init="rowIndex = $index">
-            <td ng-class="{'miss': missSquare[rowIndex.toString() + col.toString()], 'hit': hitSquare[rowIndex.toString() + col.toString()]}"
-                id="{{ rowIndex }}{{ col }}"
-                ng-repeat="col in row"  ng-click="processGuess($event)">
-            </td>
-        </tr>
-    </table>
+<div>
+    <div id="board">
+        <div id="messageArea">{{msg}}</div>
+        <table>
+            <tr ng-repeat="row in squareData"
+                ng-init="rowIndex = $index">
+                <td ng-class="{'miss': missSquare[rowIndex.toString() + col.toString()],
+                               'hit': hitSquare[rowIndex.toString() + col.toString()]}"
+                    id="{{ rowIndex }}{{ col }}"
+                    ng-repeat="col in row" ng-click="processGuess(rowIndex,col)">
+                </td>
 
-    <form>
-        <button ng-click="generate()"> GENERATE SHIPS</button>
-    </form>
+            </tr>
+        </table>
+    </div>
 </div>
-</body>
-</html>

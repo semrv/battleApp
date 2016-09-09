@@ -11,4 +11,6 @@ angular.
     console.log($location.replace());
     console.log($location.search());
     console.log($location.url());
+    console.log($location.path())
+
 });

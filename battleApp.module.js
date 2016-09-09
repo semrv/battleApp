@@ -1,4 +1,6 @@
-/**
- * Created by roman on 11.08.16.
- */
-angular.module('battleApp',['ngRoute']);
+angular.module('battleApp',
+    [
+        'ngRoute',
+        'ngMessages'
+    ]
+);

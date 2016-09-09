@@ -1,13 +1,11 @@
 body {
-    /*background-color: black;*/
-    background-color: #EEEEEE;
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/grey_wash_wall.png);
 }
 div#board {
     position: relative;
     width: 1024px;
     height: 863px;
     margin: auto;
-    /*background: url("images/board.jpg") no-repeat;*/
 }
 div#messageArea {
     position: absolute;
@@ -27,7 +25,7 @@ td {
     height: 94px;
     cursor: pointer;
     border: solid 2px;
-    border-color: #004D40;
+    border-color: greenyellow;
     margin: 10px;
 
 }
@@ -41,19 +39,6 @@ td:hover {
     background-color: transparent;
 }
 
-form {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    padding: 15px;
-    background-color: rgb(83, 175, 19);
-
-}
-form input {
-    background-color: rgb(152, 207, 113);
-    border-color: rgb(83, 175, 19);
-    font-size: 1em;
-}
 .hit {
     background: url("images/ship.png") no-repeat center center;
     cursor: default;
@@ -70,7 +55,7 @@ form input {
     font-size: 120px;
     left: 33%;
     bottom: 12%;
-    color: green;
+    color: yellowgreen;
     content: ".";
 }
 .info {
@@ -80,6 +65,63 @@ form input {
     position: relative;
     z-index: 1;
 }
-.rules {
-    color: black;
+.enter {
+    height: 50px;
+    width: 350px;
+    text-align: center;
+    font-size: 25px
+}
+.form {
+    display: block;
+    text-align: center;
+}
+form {
+    margin-top: 150px;
+}
+.wrapper {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+
+
+.button {
+    display: block;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.button-start {
+    border-radius: 10px;
+    border: 2px solid #edebe9;
+}
+
+.button a {
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    color: #fff;
+    background-color: #5c6d96;
+    text-decoration: none;
+    transition: all .4s;
+    text-decoration: uppercase;
+    color: #fff;
+    font-size: 30px;
+}
+
+.button a:hover {
+    background-color: #4bcaff;
+    box-shadow: 0 4px 0 #277697;
+    border: 2px solid #4bcafff;
+}
+
+.button a:active {
+    box-shadow: inset 0 0 0 #277697;
+    border: 2px solid #4bcafff;
+    border: 2px solid #2791a8;
+}
+
+.wrapper  div{
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 1px 0 0 #000;
 }
