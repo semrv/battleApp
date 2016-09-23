@@ -1,0 +1,54 @@
+<div class="form">
+    <form name="formOfData">
+        <div class="wrapper" ng-class="{'has-error':formOfData.length.$invalid && formOfData.length.$dirty}">
+            <div class='message-error' ng-messages="formOfData.length.$error">
+                <div ng-message="required">Please enter length of ships from 1 to 9</div>
+                <div ng-message="max">Ships length is too long</div>
+                <div ng-message="min">Ships length is too short</div>
+            </div>
+            <input placeholder="length of ships" onfocus="this.placeholder = ''" onblur="this.placeholder = 'length of ships'"
+                   ng-model="data.shipLength"
+                   name="length"
+                   class='enter'
+                   type="number"
+                   min="1"
+                   max="9"
+                  required/>
+        </div>
+
+        <div class="wrapper" ng-class="{'has-error':formOfData.ammount.$invalid && formOfData.ammount.$dirty}">
+            <div ng-messages="formOfData.ammount.$error" class='message-error'>
+                <div ng-message="required">Please enter number of ships from 1 to 9</div>
+                <div ng-message="max">Number of ships is too much</div>
+                <div ng-message="min">Number of ships is too few</div>
+            </div>
+            <input placeholder="number of ships" onfocus="this.placeholder = ''" onblur="this.placeholder = 'number of ships'"
+                   ng-model="data.ammount"
+                   class='enter'
+                   name="ammount"
+                   type="number"
+                   min="1"
+                   max="9"
+                   required/>
+        </div>
+
+        <div class="wrapper" ng-class="{'has-error':formOfData.size.$invalid && formOfData.size.$dirty}">
+            <div ng-messages="formOfData.size.$error" class='message-error'>
+                <div ng-message="required">Please enter the size of the field from 1 to 10</div>
+                <div ng-message="max">Field size is too large</div>
+                <div ng-message="min">Field size is too small</div>
+            </div>
+            <input placeholder="size of field" onfocus="this.placeholder = ''" onblur="this.placeholder = 'size of field'"
+                   ng-model="data.value"
+                   class='enter'
+                   name="size"
+                   type="number"
+                   min="1"
+                   max="10"
+                   required/>
+        </div>
+        <div class="button">
+            <a class="button-start" ng-class="{'disabled':formOfData.$invalid,'able':formOfData.$valid}" ng-click="start()" > START GAME</a>
+        </div>
+    </form>
+</div>

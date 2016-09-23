@@ -1,12 +1,41 @@
 angular.
     module('battleApp').
-        service('shipsService',function() {
+        service('shipsService',function($state) {
     this.boardSize = 0;
     this.numShips = 0;
     this.shipLength = 0;
     this.shipsSunk = 0;
     this.ships = [];
     this.guesses = 0;
+    this.shipdead = '';
+    this.squareData = [];
+    //TODO loDASH
+    this.start = function (data, callback) {
+        if (data.shipLength > data.value || data.ammount > data.value) {
+            alert('Length of ships and Number of ships cant be larger than the field size')
+            return false;
+        }
+        this.shipLength = data.shipLength;
+        this.numShips = data.ammount;
+        this.boardSize = data.value;
+        for (var i = 0; i < data.ammount; i++) {
+            this.ships.push({locations: [], hits: ["", "", ""], shipLive: true})
+        }
+        for (var k = 0; k < data.value; k++) {
+            this.squareData.push([])
+            for (var j = 0; j < data.value; j++) {
+                this.squareData[k].push(j)
+            }
+        }
+        if (callback) {
+            callback(this.squareData)
+        }
+        this.generateShipLocations();
+        $state.go('game')
+    };
+
+
+
     this.fire = function (guess) {
         for (var i = 0; i < this.numShips; i++) {
             var ship = this.ships[i];
@@ -19,6 +48,7 @@ angular.
                     this.msg = "You sank my battleship!";
                     ship.shipLive = false;
                     this.shipsSunk++;
+                    this.shipdead = ship;
                 }
                 return true;
             }

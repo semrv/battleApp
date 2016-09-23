@@ -1,0 +1,18 @@
+<div>
+    <div class="board">
+        <div class="messageArea">{{msg}}</div>
+        <table change-class>
+            <tr ng-repeat="row in squareData"
+                ng-init="rowIndex = $index">
+                <td ng-class="{
+                               'miss': missSquare[rowIndex.toString() + col.toString()],
+                               'hit': hitSquare[rowIndex.toString() + col.toString()]
+                               }"
+                    id="{{ rowIndex }}{{ col }}"
+                    ng-repeat="col in row" ng-click="processGuess(rowIndex,col)">
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>

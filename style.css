@@ -1,13 +1,13 @@
 body {
     background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/grey_wash_wall.png);
 }
-div#board {
+div.board {
     position: relative;
     width: 1024px;
     height: 863px;
     margin: auto;
 }
-div#messageArea {
+div.messageArea {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -18,8 +18,6 @@ table {
     position: absolute;
     left: 173px;
     top: 98px;
-    /*border-spacing: 0px;*/
-
 }
 td {
     width: 94px;
@@ -28,7 +26,7 @@ td {
     border: solid 2px;
     border-color: greenyellow;
     margin: 10px;
-
+    position: relative;
 }
 td:hover {
     background-color: #8BC34A;
@@ -39,17 +37,15 @@ td:hover {
 .hit:hover {
     background-color: transparent;
 }
-
 .hit {
     background: url("images/ship.png") no-repeat center center;
     cursor: default;
-
+    pointer-events: none;
 }
 .miss {
-    /*background: url("images/miss.png") no-repeat center center;*/
     cursor: default;
     position: relative;
-
+    pointer-events: none;
 }
 .miss:before{
     position: absolute;
@@ -90,17 +86,29 @@ td:hover {
     border-radius: 10px;
     border: 2px solid #edebe9;
 }
-.button a {
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #999999;
     text-align: center;
     padding: 10px 20px 10px 20px;
     color: #fff;
-    background-color: #5c6d96;
     text-decoration: none;
     transition: all .4s;
     text-decoration: uppercase;
-    color: #fff;
     font-size: 30px;
 }
+.able{
+    background-color: #5c6d96;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: all .4s;
+    text-decoration: uppercase;
+    font-size: 30px;
+}
+
 .button a:hover {
     background-color: #4bcaff;
     box-shadow: 0 4px 0 #277697;
@@ -115,4 +123,32 @@ td:hover {
     margin-bottom: 10px;
     color: #fff;
     text-shadow: 1px 0 0 #000;
+}
+.message-error {
+    font-size: 20px;
+}
+.has-error div.message-error div {
+    font-size: 20px;
+    color:#FF5E5E
+}
+.has-error input{
+    outline: 0;
+    border: 1px solid #FF5E5E;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: #999999;
+}
+.killed:after{
+    position: absolute;
+    color: red;
+    font-size: 9em;
+    top: -36px;
+    left: -5px;
+    content: 'X';
+    opacity:0.5;
+    pointer-events: none;
+    border-color: red;
+
 }

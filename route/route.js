@@ -3,18 +3,18 @@
         config(function($stateProvider,$urlRouterProvider) {
     $stateProvider
         .state('start', {
-            url: '/',
-            templateUrl: 'templates/tmp1.html'
+            url: '/start',
+            templateUrl: 'templates/start.html'
         })
         .state('game', {
-            url: '/',
-            templateUrl: 'templates/tmp2.html'
+            url: '/game',
+            templateUrl: 'templates/game.html'
         })
         .state('finish', {
-            url: '/',
-            templateUrl: 'templates/tmp3.html'
+            url: '/finish',
+            templateUrl: 'templates/finish.html'
         });
 
-     $urlRouterProvider.otherwise('/')
+     $urlRouterProvider.otherwise('/start')
 
  });
