@@ -104,7 +104,7 @@ adding the feature module as a dependency in the new project&#39;s main module.<
     phone-list.module.js
     phone-list.component.js
     phone-list.component.spec.js
-  app.module.js
+  app.mdl.js
 </code></pre>
 <p><br />
 <strong><code>app/phone-list/phone-list.module.js</code>:</strong></p>
@@ -119,7 +119,7 @@ angular.
   component(&#39;phoneList&#39;, {...});
 </code></pre>
 <p><br />
-<strong><code>app/app.module.js</code>:</strong><br />
+<strong><code>app/app.mdl.js</code>:</strong><br />
 <em>(since <code>app/app.js</code> now only contains the main module declaration, we gave it a <code>.module</code> suffix)</em></p>
 <pre><code class="lang-js">// Define the `phonecatApp` module
 angular.module(&#39;phonecatApp&#39;, [
@@ -208,7 +208,7 @@ HTTP request to get the template from <code>app/phone-list/phone-list.template.h
     phone-list.module.js
     phone-list.template.html
   app.css
-  app.module.js
+  app.mdl.js
   index.html
 </code></pre>
 <h1 id="testing">Testing</h1>

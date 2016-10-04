@@ -121,7 +121,7 @@ into the layout template. This makes it a perfect fit for our <code>index.html</
   ...
   &lt;script src=&quot;bower_components/angular/angular.js&quot;&gt;&lt;/script&gt;
   &lt;script src=&quot;bower_components/angular-route/angular-route.js&quot;&gt;&lt;/script&gt;
-  &lt;script src=&quot;app.module.js&quot;&gt;&lt;/script&gt;
+  &lt;script src=&quot;app.mdl.js&quot;&gt;&lt;/script&gt;
   &lt;script src=&quot;app.config.js&quot;&gt;&lt;/script&gt;
   ...
   &lt;script src=&quot;phone-detail/phone-detail.module.js&quot;&gt;&lt;/script&gt;
@@ -151,7 +151,7 @@ replaced it with a <code>&lt;div&gt;</code> with the <code>ng-view</code> attrib
 providers for configuration. To make the providers, services and directives defined in <code>ngRoute</code>
 available to our application, we need to add <code>ngRoute</code> as a dependency of our <code>phonecatApp</code> module.</p>
 <p><br />
-<strong><code>app/app.module.js</code>:</strong></p>
+<strong><code>app/app.mdl.js</code>:</strong></p>
 <pre><code class="lang-js">angular.module(&#39;phonecatApp&#39;, [
   &#39;ngRoute&#39;,
   ...
@@ -243,7 +243,7 @@ which we added as a dependency of the <code>phonecatApp</code> module.</p>
   });
 </code></pre>
 <p><br />
-<strong><code>app/app.module.js</code>:</strong></p>
+<strong><code>app/app.mdl.js</code>:</strong></p>
 <pre><code class="lang-js">angular.module(&#39;phonecatApp&#39;, [
   ...
   &#39;phoneDetail&#39;,

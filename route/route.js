@@ -4,15 +4,18 @@
     $stateProvider
         .state('start', {
             url: '/start',
-            templateUrl: 'templates/start.html'
+            templateUrl: 'templates/start.tpl.html',
+            controller: 'StartGameController'
         })
         .state('game', {
             url: '/game',
-            templateUrl: 'templates/game.html'
+            templateUrl: 'templates/game.tpl.html',
+            controller: 'ProcessOfGameController',
         })
         .state('finish', {
             url: '/finish',
-            templateUrl: 'templates/finish.html'
+            templateUrl: 'templates/finish.tpl.html',
+            controller: 'FinishGameController'
         });
 
      $urlRouterProvider.otherwise('/start')
