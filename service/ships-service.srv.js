@@ -7,6 +7,7 @@ angular.module('battleApp').service('shipsService', function () {
     this.guesses = 0;
     this.shipdead = '';
     this.squareData = [];
+    this.gameStatus = false;
     this.start = function (data, callback) {
         if (data.shipLength > data.value || data.ammount > data.value) {
             alert('Length of ships and Number of ships cant be larger than the field size')
@@ -41,6 +42,9 @@ angular.module('battleApp').service('shipsService', function () {
                     ship.shipLive = false;
                     this.shipsSunk++;
                     this.shipdead = ship;
+                    if(this.shipsSunk === this.numShips) {
+                        this.gameStatus = true;
+                    }
                 }
                 return true;
             }

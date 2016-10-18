@@ -1,6 +1,8 @@
 angular.module('battleApp',
     [
         'ui.router',
-        'ngMessages'
+        'ngMessages',
+        'ui.bootstrap',
+        'ngAnimate'
     ]
 );

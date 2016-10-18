@@ -2,7 +2,10 @@ angular.module('battleApp').
     directive('changeClass', function(){
     return {
         restrict: 'A',
-        link: function (scope, element) {
+        scope: {
+            shipdead: '=ccShipdead'
+        },
+        link: function (scope) {
             scope.$watch('shipdead',function() {
                 if(scope.shipdead) {
                     for(var i=0; i<scope.shipdead.locations.length;i++) {
